@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Zen Dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:800"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background: url('https://source.unsplash.com/featured/?nature');
+        background-size: cover;
+        background-position: bottom center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      #message {
+        font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 90px;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        text-align: center;
+      }
+      .credits {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        color: #fff;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.7);
+        border-top-left-radius: 4px;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message"></div>
+    <div class="credits">Bernardo P. Rittmeyer - 2018</div>
+    <script>
+      async function getMessage() {
+        const response = await fetch('https://api.github.com/zen', {
+          mode: 'cors',
+          cache: 'no-cache'
+        });
+
+        if (response.ok) {
+          const text = await response.text();
+          document
+            .getElementById('message')
+            .appendChild(document.createTextNode(text));
+        }
+      }
+      getMessage();
+    </script>
+  </body>
+</html>
