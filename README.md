@@ -1,6 +1,6 @@
-# A page with zen messages for dev meditation.
+# Zen messages for dev meditation.
 
-##Content from:
+## Content from:
 
-- Message: Github Zen
+- Messages: Github Zen
 - Images: Unsplash
