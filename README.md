@@ -1,6 +1,6 @@
-# Zen messages for dev meditation.
+# The Zen of Python for dev meditation.
 
 ## Content from:
 
-- Messages: Github Zen
+- Messages: PEP 20 - The Zen of Python
 - Images: Unsplash

@@ -11,7 +11,7 @@
     />
     <style>
       html {
-        background: url('https://source.unsplash.com/featured/?nature');
+        background: url('https://source.unsplash.com/featured/?zen');
         background-size: cover;
         background-position: bottom center;
         display: flex;
@@ -42,22 +42,36 @@
   </head>
   <body>
     <div id="message"></div>
-    <div class="credits">rittme - 2018</div>
+    <div class="credits">rittme - 2022</div>
     <script>
-      async function getMessage() {
-        const response = await fetch('https://api.github.com/zen', {
-          mode: 'cors',
-          cache: 'no-cache'
-        });
-
-        if (response.ok) {
-          const text = await response.text();
-          document
+      const quotes = [
+        "Beautiful is better than ugly.",
+        "Explicit is better than implicit.",
+        "Simple is better than complex.",
+        "Complex is better than complicated.",
+        "Flat is better than nested.",
+        "Sparse is better than dense.",
+        "Readability counts.",
+        "Special cases aren't special enough to break the rules.",
+        "Although practicality beats purity.",
+        "Errors should never pass silently.",
+        "Unless explicitly silenced.",
+        "In the face of ambiguity, refuse the temptation to guess.",
+        "There should be one-- and preferably only one --obvious way to do it.",
+        // "Although that way may not be obvious at first unless you're Dutch.",
+        "Now is better than never.",
+        "Although never is often better than *right* now.",
+        "If the implementation is hard to explain, it's a bad idea.",
+        "If the implementation is easy to explain, it may be a good idea.",
+        "Namespaces are one honking great idea -- let's do more of those!",
+      ];
+      const rand = Math.floor((quotes.length - 1) * Math.random());
+      console.log(rand);
+      const quote = quotes[rand];
+      console.log(quote);
+      document
             .getElementById('message')
-            .appendChild(document.createTextNode(text));
-        }
-      }
-      getMessage();
+            .appendChild(document.createTextNode(quote));
     </script>
   </body>
 </html>
